@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Charity.Models.DonorAddDonee>
+
+@{
+    ViewBag.Title = "ShowDonorDonee";
+}
+<div class="jumbotron text-center" style="margin-top: 80px; box-shadow: 0 1px 2px rgba(0, 0, 0, .6)">
+    <p>Sadqa And Zakat Collection And Distribution</p>
+    <h2>Welcome Dear Show Donor Donee</h2>
+
+</div>
+
+
+<p>
+    @Html.ActionLink("Create New", "AddDonee")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DAid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cnic)
+        </th>
+        
+        <th>Action</th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.DAid)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Cnic)
+    </td>
+    <td> <input type="submit" onclick="location.href = '@Url.Action("family","Welcome", new {@daid=item.DAid })'" value="family" style="background-color: #3680f7; color: white; width: 120%" class="btn btn-default" /></td>
+
+    @*<td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>*@
+</tr>
+}
+
+</table>

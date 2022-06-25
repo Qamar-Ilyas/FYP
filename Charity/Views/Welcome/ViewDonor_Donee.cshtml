@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Charity.Models.DonorAddDonee>
+
+@{
+    ViewBag.Title = "ViewDonor_Donee";
+}
+<div class="jumbotron text-center" style="margin-top: 80px; box-shadow: 0 1px 2px rgba(0, 0, 0, .6)">
+    <p>Sadqa And Zakat Collection And Distribution</p>
+    <h2>Welcome Dear View Donor Donee</h2>
+
+</div>
+
+
+<p>
+    @Html.ActionLink("Create New", "AddDonee")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DAid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cnic)
+        </th>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Need)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Did)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DAid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cnic)
+        </td>
+      
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Need)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Did)
+        </td>
+        @*<td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>*@
+    </tr>
+}
+
+</table>

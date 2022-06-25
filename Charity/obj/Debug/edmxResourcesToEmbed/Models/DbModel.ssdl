@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SadqaAndZakatModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Donor">
+    <Key>
+      <PropertyRef Name="Did" />
+    </Key>
+    <Property Name="Did" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="30" />
+    <Property Name="Email" Type="varchar" MaxLength="30" />
+    <Property Name="Cnic" Type="varchar" MaxLength="13" />
+    <Property Name="ContactNo" Type="varchar" MaxLength="20" />
+    <Property Name="Address" Type="varchar" MaxLength="30" />
+    <Property Name="Password" Type="varchar" MaxLength="8" />
+  </EntityType>
+  <EntityType Name="FieldWorker">
+    <Key>
+      <PropertyRef Name="Fid" />
+    </Key>
+    <Property Name="Fid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="30" />
+    <Property Name="Email" Type="varchar" MaxLength="30" />
+    <Property Name="Cnic" Type="varchar" MaxLength="13" />
+    <Property Name="ContactNo" Type="varchar" MaxLength="20" />
+    <Property Name="Address" Type="varchar" MaxLength="30" />
+    <Property Name="Status" Type="varchar(max)" />
+    <Property Name="Password" Type="varchar" MaxLength="8" />
+  </EntityType>
+  <EntityType Name="Representator">
+    <Key>
+      <PropertyRef Name="Rid" />
+    </Key>
+    <Property Name="Rid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="30" />
+    <Property Name="Email" Type="varchar" MaxLength="30" />
+    <Property Name="Cnic" Type="varchar" MaxLength="13" />
+    <Property Name="ContactNo" Type="varchar" MaxLength="20" />
+    <Property Name="Address" Type="varchar" MaxLength="30" />
+    <Property Name="Status" Type="varchar(max)" />
+    <Property Name="Password" Type="varchar" MaxLength="8" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Uid" />
+    </Key>
+    <Property Name="Uid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="30" />
+    <Property Name="Email" Type="varchar" MaxLength="30" />
+    <Property Name="Cnic" Type="varchar" MaxLength="13" />
+    <Property Name="ContactNo" Type="varchar" MaxLength="11" />
+    <Property Name="Address" Type="varchar" MaxLength="30" />
+    <Property Name="Password" Type="varchar" MaxLength="8" />
+  </EntityType>
+  <EntityContainer Name="SadqaAndZakatModelStoreContainer">
+    <EntitySet Name="Donor" EntityType="Self.Donor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FieldWorker" EntityType="Self.FieldWorker" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Representator" EntityType="Self.Representator" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
